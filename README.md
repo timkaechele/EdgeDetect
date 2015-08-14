@@ -49,6 +49,19 @@ naive.detect_edges # => ChunkyPNG::Image
 sobel.detect_edges # => ChunkyPNG::Image
 ```
 
+## Examples
+
+
+![Airplane](test/pictures/airplane.png)
+Input file
+
+![Airplane with naive edge detection](test/output/airplane_standard.png)
+Naive Edge Detection
+
+![Airplane with sobel edge detection](test/output/airplane_sobel.png)
+Sobel Edge Detection
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/timkaechele/edgedetect. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
