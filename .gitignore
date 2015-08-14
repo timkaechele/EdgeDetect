@@ -9,4 +9,4 @@
 /tmp/
 /vendor
 .DS_Store
-/test/output/
+/test/output/*.png
