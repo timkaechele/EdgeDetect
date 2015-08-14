@@ -1,34 +1,53 @@
 # Edgedetect
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/edgedetect`. To experiment with that code, run `bin/console` for an interactive prompt.
+EdgeDetect is a pure ruby implementation of an edge detect algorithm. It is by 
+no means fast enough to be considered useful in a real world application, it 
+is just a proof of concept. It is build around the ChunkyPNG gem and therefore 
+can only work with PNG files. 
 
-TODO: Delete this and the text above, and describe your gem
+**Warning:** Because I find it hard to test a purely subjective experience of 
+a good edge detection, I didn't write tests in the normal way. If you run the 
+tests some basic math stuff will be tested, but the final edge detection is 
+not tested, instead you can view the results in the `test/output` folder.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'edgedetect'
+gem 'edgedetect', github: "timkaechele/edgedetect"
 ```
 
 And then execute:
 
-    $ bundle
+```sh
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install edgedetect
+```sh
+$ git clone git@github.com:timkaechele/edgedetect.git
+$ cd edgedetect
+$ rake install
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+There are two basic EdgeDetect implementations, one that naively builds the 
+difference between the gray value of each individual pixel and one more 
+advanced but also slower one, that uses the sobel operation to detect
+the edges. Both can be used in the same way.
 
-## Development
+```ruby
+image = ChunkyPNG::Image.from_file("myfile.png")
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+naive = EdgeDetect::EdgeDetector.new(image)
+sobel = EdgeDetect::SobelEdgeDetector.new(image)
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+naive.detect_edges # => ChunkyPNG::Image
+sobel.detect_edges # => ChunkyPNG::Image
+```
 
 ## Contributing
 

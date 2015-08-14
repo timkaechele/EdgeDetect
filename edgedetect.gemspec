@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Tim Kächele"]
   spec.email         = ["mail@timkaechele.me"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Edge Detection written in Ruby"
+  spec.description   = "A pure ruby implementation of an naive edge detection algorithm, as well as the sobel algorithm."
+  spec.homepage      = "https://github.com/timkaechele/edgedetect"
   spec.license       = "GNU GPL v2"
 
 
