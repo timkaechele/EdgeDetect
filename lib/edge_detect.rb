@@ -1,0 +1,10 @@
+require 'chunky_png'
+require 'matrix'
+
+require 'edge_detect/version'
+require 'edge_detect/matrix'
+require 'edge_detect/gray_scaler'
+require 'edge_detect/differ'
+require 'edge_detect/horizontal_differ'
+require 'edge_detect/vertical_differ'
+require 'edge_detect/edge_detector'
