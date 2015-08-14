@@ -8,3 +8,5 @@
 /spec/reports/
 /tmp/
 /vendor
+.DS_Store
+/test/output/

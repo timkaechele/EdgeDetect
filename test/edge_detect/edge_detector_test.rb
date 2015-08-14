@@ -2,31 +2,35 @@ require 'test_helper'
 
 class EdgeDetectorTest < Minitest::Test
 
-  def setup
-    @vertical_line = create_vertical_line
-    @horizontal_line = create_horizontal_line
+
+  def test_vertical_line
+    input = File.expand_path('../../pictures/airplane.png', __FILE__)
+    image = ChunkyPNG::Image.from_file(input)
+
+    standard = EdgeDetector.new(image)
+    sobel  = SobelEdgeDetector.new(image)
+
+    output_standard = File.expand_path('../../output/airplane_standard.png', __FILE__)
+    output_sobel = File.expand_path('../../output/airplane_sobel.png', __FILE__)
+
+    standard.detect_edges.save(output_standard)
+    sobel.detect_edges.save(output_sobel)
   end
 
-  def test_a
-    edge = EdgeDetector.new(@vertical_line)
-    edge.detect_edges
+  def test_horizontal_line
+    input = File.expand_path('../../pictures/robot.png', __FILE__)
+    image = ChunkyPNG::Image.from_file(input)
+
+    standard = EdgeDetector.new(image)
+    sobel  = SobelEdgeDetector.new(image)
+
+    output_standard = File.expand_path('../../output/robot_standard.png', __FILE__)
+    output_sobel = File.expand_path('../../output/robot_sobel.png', __FILE__)
+
+    standard.detect_edges.save(output_standard)
+    sobel.detect_edges.save(output_sobel)
   end
 
-  private 
-  def create_horizontal_line
-    image = ChunkyPNG::Image.new(7, 3, ChunkyPNG::Color::TRANSPARENT)
-    (1..5).each do |i|
-      image[i, 1] = ChunkyPNG::Color('black')
-    end
-    image
-  end
 
-  def create_vertical_line
-    image = ChunkyPNG::Image.new(3, 7, ChunkyPNG::Color::TRANSPARENT)
-    (1..5).each do |i|
-      image[1, i] = ChunkyPNG::Color('black')
-    end
-    image
-  end
 
 end
