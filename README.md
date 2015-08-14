@@ -52,14 +52,22 @@ sobel.detect_edges # => ChunkyPNG::Image
 ## Examples
 
 
-![Airplane](test/pictures/airplane.png)
 Input file
 
-![Airplane with naive edge detection](test/output/airplane_standard.png)
+![Airplane](test/pictures/airplane.png)
+
+<br>
+
 Naive Edge Detection
 
-![Airplane with sobel edge detection](test/output/airplane_sobel.png)
+![Airplane with naive edge detection](test/output/airplane_standard.png)
+
+<br>
+
 Sobel Edge Detection
+
+![Airplane with sobel edge detection](test/output/airplane_sobel.png)
+
 
 
 ## Contributing
