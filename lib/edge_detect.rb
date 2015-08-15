@@ -9,3 +9,9 @@ require 'edge_detect/horizontal_differ'
 require 'edge_detect/vertical_differ'
 require 'edge_detect/edge_detector'
 require 'edge_detect/sobel_edge_detector'
+
+##
+# EdgeDetection module
+# 
+module EdgeDetect
+end

@@ -1,6 +1,18 @@
 module EdgeDetect
+
+  ##
+  # Sobel EdgeDetect Implementation
+  #
   class SobelEdgeDetector < EdgeDetector
-     def detect_edges
+
+    ##
+    # Edge detects the image by applying the sobel operations.
+    # 
+    # The original image will not be changed by this operation.
+    # 
+    # @return [ChunkyPNG::Image] the edge detected image.
+    #
+    def detect_edges
       image = ChunkyPNG::Image.new(@image.width, @image.height, ChunkyPNG::Color::TRANSPARENT)
       gray = GrayScaler.new(self.image)
 
@@ -19,6 +31,11 @@ module EdgeDetect
 
     private
 
+      ## 
+      # The sobel matrix to transform horizontal pixels
+      #
+      # @return [Matrix] the sobel matrix
+      #
       def sobel_x
         @sobel_x ||= Matrix[
           [1, 0, -1],
@@ -27,6 +44,11 @@ module EdgeDetect
         ]
       end
 
+      ## 
+      # The sobel matrix to transform vertical pixels
+      #
+      # @return [Matrix] the sobel matrix
+      #
       def sobel_y
         @sobel_y ||= Matrix[
           [1,   2,  1],
