@@ -7,9 +7,9 @@ module EdgeDetect
 
     ##
     # Edge detects the image by applying the sobel operations.
-    # 
+    #
     # The original image will not be changed by this operation.
-    # 
+    #
     # @return [ChunkyPNG::Image] the edge detected image.
     #
     def detect_edges
@@ -31,7 +31,7 @@ module EdgeDetect
 
     private
 
-      ## 
+      ##
       # The sobel matrix to transform horizontal pixels
       #
       # @return [Matrix] the sobel matrix
@@ -44,7 +44,7 @@ module EdgeDetect
         ]
       end
 
-      ## 
+      ##
       # The sobel matrix to transform vertical pixels
       #
       # @return [Matrix] the sobel matrix
