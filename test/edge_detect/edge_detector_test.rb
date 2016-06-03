@@ -2,7 +2,6 @@ require 'test_helper'
 
 class EdgeDetectorTest < Minitest::Test
 
-
   def test_airplane
     input = File.expand_path('../../pictures/airplane.png', __FILE__)
     image = ChunkyPNG::Image.from_file(input)
@@ -31,7 +30,7 @@ class EdgeDetectorTest < Minitest::Test
     sobel.detect_edges.save(output_sobel)
   end
 
-  def test_robot
+  def test_asics
     input = File.expand_path('../../pictures/asics.png', __FILE__)
     image = ChunkyPNG::Image.from_file(input)
 
